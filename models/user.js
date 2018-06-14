@@ -19,8 +19,8 @@ module.exports = {
 	update: function (user_id, user_data, cb) {
 		users.update({_id: user_id}, {$push: {'matches': user_data}}, cb);
 	},
-	updateScore: function (user_id, user_data, cb) {
-		users.update({_id: user_id}, {$set: user_data}, cb);
+	updateScore: function (user_id, user_data, match_name, cb) {
+		users.update({_id: user_id}, {$set: user_data, $push: {'status' : match_name}}, cb);
 	},
 
 };

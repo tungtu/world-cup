@@ -45,6 +45,7 @@ module.exports = function (passport) {
 							score : 0,
 							role : 'User',
 							matches: [],
+							status: [],
 							email : profile.emails[0].value
 						};
 

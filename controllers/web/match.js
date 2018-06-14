@@ -68,23 +68,24 @@ router.get('/refresh', function (req, res) {
 					for (var k in data) {
 						for (var j in data[k].matches) {
 							users.forEach(function(user) {
-								for (var u in user.matches) {
-									if (data[k].matches[j].name == user.matches[u].match_name) {
-										if (data[k].matches[j].home_result < data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].away_team) {
-											User.updateScore(user._id, {score: user.score + 1}, function (err, doc) {
-												if (err)
-													res.send("Some error occured");
-											})
-										}
-										else if(data[k].matches[j].home_result > data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].home_team){
-											User.updateScore(user._id, {score: user.score + 1}, function (err, doc) {
-												if (err)
-													res.send("Some error occured");
-											})
-										}
+								if (!user.status.includes(data[k].matches[j].name.toString()))
+									for (var u in user.matches) {
+										if (data[k].matches[j].name == user.matches[u].match_name) {
+											if (data[k].matches[j].home_result < data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].away_team) {
+												User.updateScore(user._id, {score: user.score + 1 }, user.matches[u].match_name, function (err, doc) {
+													if (err)
+														res.send("Some error occured");
+												})
+											}
+											else if(data[k].matches[j].home_result > data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].home_team){
+												User.updateScore(user._id, {score: user.score + 1}, user.matches[u].match_name, function (err, doc) {
+													if (err)
+														res.send("Some error occured");
+												})
+											}
 
+										}
 									}
-								}
 							});
 						}
 					}
