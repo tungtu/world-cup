@@ -12,6 +12,7 @@
     "NODE_ENV": "development"
   },
   "dependencies": {
+    "extsprintf": "*",
     "bcrypt": "^2.0.1",
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.13.2",
@@ -27,7 +28,6 @@
     "method-override": "~1.0.0",
     "mongodb": "^1.4.40",
     "monk": "*",
-    "extsprintf": "*",
     "morgan": "~1.6.1",
     "passport": "~0.1.17",
     "passport-facebook": "^2.1.1",
