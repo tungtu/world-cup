@@ -72,7 +72,8 @@ router.get('/refresh', function (req, res) {
 							score = type_score['Group'];
 
 						for (var j in data[k].matches) {
-							users.forEach(function(user) {
+							if(data[k].matches[j].home_result != null && data[k].matches[j].away_result != null)
+								users.forEach(function(user) {
 								if (!user.status.includes(data[k].matches[j].name.toString()))
 									for (var u in user.matches) {
 										if (data[k].matches[j].name == user.matches[u].match_name) {

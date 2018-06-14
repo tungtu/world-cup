@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83b60e4b-6236-4037-8f36-272bb17af387" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/passport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/web/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/web/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/assets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/assets/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/web/message-error.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/web/message-error.jade" afterDir="false" />
-    </list>
+    <list default="true" id="83b60e4b-6236-4037-8f36-272bb17af387" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -20,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/web/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
-              <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
               <folding>
                 <element signature="e#1202#2713#0" />
               </folding>
@@ -32,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="message-error.jade" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/web/message-error.jade">
+      <file leaf-file-name="login.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/web/login.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <state relative-caret-position="150">
+              <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -44,8 +38,8 @@
       <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/assets/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="94" column="55" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="55" />
+            <state relative-caret-position="332">
+              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
             </state>
           </provider>
         </entry>
@@ -90,7 +84,6 @@
       <list>
         <option value="$PROJECT_DIR$/controllers/admin/index.js" />
         <option value="$PROJECT_DIR$/controllers/site/index.js" />
-        <option value="$PROJECT_DIR$/views/web/login.jade" />
         <option value="$PROJECT_DIR$/views/web/layout.jade" />
         <option value="$PROJECT_DIR$/models/team.js" />
         <option value="$PROJECT_DIR$/views/web/match/list.jade" />
@@ -113,6 +106,7 @@
         <option value="$PROJECT_DIR$/controllers/web/index.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/assets/js/scripts.js" />
         <option value="$PROJECT_DIR$/views/web/message-error.jade" />
+        <option value="$PROJECT_DIR$/views/web/login.jade" />
       </list>
     </option>
   </component>
@@ -269,16 +263,15 @@
       <workItem from="1528345520044" duration="9109000" />
       <workItem from="1528772796074" duration="24134000" />
       <workItem from="1528876004630" duration="21127000" />
-      <workItem from="1528993347334" duration="3115000" />
+      <workItem from="1528993347334" duration="3366000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65648000" />
+    <option name="totallyTimeSpent" value="65899000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="721" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32956383" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19709209" />
@@ -286,10 +279,10 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32692307" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32692307" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.36698717" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.36698717" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -578,13 +571,6 @@
     <entry file="file://$PROJECT_DIR$/views/error.jade">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/passport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/web/message-alert.jade">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -600,34 +586,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/web/login.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/web/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
-          <folding>
-            <element signature="e#1202#2713#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/assets/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="94" column="55" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="55" />
+        <state relative-caret-position="332">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/web/login.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/passport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="41" column="36" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/web/message-error.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/web/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+          <folding>
+            <element signature="e#1202#2713#0" />
+          </folding>
         </state>
       </provider>
     </entry>
