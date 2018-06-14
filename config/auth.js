@@ -9,9 +9,9 @@ module.exports = {
 	},
 
 	'googleAuth' : {
-		'clientID'      : 'your-secret-clientID-here',
-		'clientSecret'  : 'your-client-secret-here',
-		'callbackURL'   : 'http://localhost:8080/auth/google/callback'
+		'clientID'      : '1019482309916-k3m4q4nq7aekqcg8l0mm0v805rmi7r7e.apps.googleusercontent.com',
+		'clientSecret'  : 'pyCWVS_ZGWOKxhSgG_JDpj6q',
+		'callbackURL'   : 'https://topica-worldcup.herokuapp.com/auth/google/callback'
 	}
 
 };
