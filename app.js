@@ -17,7 +17,7 @@ if (app.get('env') === 'development') {
 	MONGO_URI = 'localhost:27017/worldcup';
 }
 else if(app.get('env') === 'production'){
-	MONGO_URI = 'localhost:27017/worldcup';
+	MONGO_URI = 'mongodb://root:asd123@ds259250.mlab.com:59250/worldcup';
 }
 
 require('./config/passport')(passport);
