@@ -8,7 +8,7 @@ var default_route = '/home';
 
 var fs = require('fs');
 
-var obj = JSON.parse(fs.readFileSync('json_data.json', 'utf8'));
+// var obj = JSON.parse(fs.readFileSync('json_data.json', 'utf8'));
 
 var request = require('request');
 var url = 'https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json';
@@ -50,7 +50,7 @@ router.get('/auth/google/callback',
 router.get('/home', isLoggedInAdmin, function (req, res) {
 	request.get(url, function (error, response, body) {
 		if (!error && response.statusCode == 200) {
-			// var obj = JSON.parse(body);
+			var obj = JSON.parse(body);
 			User.getAll(function (err, users) {
 				if (err)
 					res.send("Some error occured");
@@ -62,7 +62,7 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 								res.send("Some error occured");
 							else {
 								// var date_current = new Date();
-								var date_current = new Date('2018-06-15');
+								var date_current = new Date();
 								var data = obj.groups;
 								var matches = [];
 

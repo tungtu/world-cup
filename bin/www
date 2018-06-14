@@ -29,7 +29,7 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-// var date_current = new Date('2018-06-15');
+//var date_current = new Date('2018-06-15');
 // console.log(new Date('2018-06-15T21:00:00+03:00').toDateString());
 // console.log(date_current.toDateString());
 // console.log(date_current.toDateString() == new Date('2018-06-14T18:00:00+03:00').toDateString() );

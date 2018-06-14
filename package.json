@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "env TZ='Asia/Ho_Chi_Minh' node ./bin/www"
   },
   "env_production": {
     "NODE_ENV": "production"

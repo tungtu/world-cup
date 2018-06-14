@@ -11,7 +11,7 @@ var url = 'https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.
 
 var fs = require('fs');
 
-var obj = JSON.parse(fs.readFileSync('json_data.json', 'utf8'));
+// var obj = JSON.parse(fs.readFileSync('json_data.json', 'utf8'));
 
 router.get('/lock', isLoggedInAsAdmin, function (req, res) {
 	var match_id = req.query.match_id;
@@ -62,7 +62,7 @@ router.get('/refresh', function (req, res) {
 		else {
 			request.get(url, function (error, response, body) {
 				if (!error && response.statusCode == 200) {
-					// var obj = JSON.parse(body);
+					var obj = JSON.parse(body);
 					var data = obj.groups;
 
 					for (var k in data) {
