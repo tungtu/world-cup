@@ -1,0 +1,95 @@
+extends layout
+
+block content
+    .top-content
+        .container
+          include header
+          .row.mb-30.mt-30
+            .col-sm-12.form-box
+              .form-top
+                include ../web/message-alert
+                each match in matches
+                  .form-top(style="background-color: #eee !important")
+                    center
+                      h2
+                        span.text-primary #{new Date(match.date).toLocaleString()}
+                    .form-group
+                      .col-sm-4
+                        center
+                          each team in teams
+                            if team.id == match.home_team
+                              h1 #{team.name}
+                              img(src=team.flag, height="150px", width="250px", style="display:block")
+                              if (!matches_name.includes(match.name.toString()))
+                                a.btn.btn-primary.mt-20(href='/match/choose?match_name=#{match.name}&c=#{team.id}', role='button') Choose
+                      .col-sm-4
+                        center
+                          h3 VS
+                      .col-sm-4
+                        center
+                          each team in teams
+                            if team.id == match.away_team
+                              h1 #{team.name}
+                              img(src=team.flag, height="150px", width="250px", style="display:block")
+                              if (!matches_name.includes(match.name.toString()))
+                                a.btn.btn-primary.mt-20(href='/match/choose?match_name=#{match.name}&c=#{team.id}', role='button') Choose
+                  hr
+
+          .row.mb-30.mt-30.bg-white
+            .col-sm-12.form-box
+              .form-top
+                h3 LIST MATCH
+                .form-group
+                  table.datatable-tabletools.table.table-hover.table-bordered
+                    thead
+                      tr
+                        th GROUP
+                        th Home Team
+                        th Away Team
+                        th Date
+                        th Finished
+                        th Home Result
+                        th Away Result
+                          if curent_user.role == "Admin"
+                            th Acion
+                    tbody
+                      each group in groups
+                        each match in group.matches
+                          tr
+                            td #{group.name}
+                              each team in teams
+                                if team.id == match.home_team
+                                  td #{team.emojiString} #{team.name}
+                              each team in teams
+                                if team.id == match.away_team
+                                  td #{team.emojiString} #{team.name}
+                            td #{new Date(match.date).toLocaleString()}
+                            td #{match.finished}
+                            td #{match.home_result}
+                            td #{match.away_result}
+                              if curent_user.role == "Admin"
+                                th
+                                  a(href= "/match/#{match.name}/lock") Lock
+          .row.mb-30.mt-30.bg-white
+            .col-sm-12.form-box
+              .form-top
+                  h3 LEADER BOARD
+                  .form-group
+                    a(href='/match/refresh').btn.btn-primary Refresh
+                  .form-group
+                    table.datatable-tabletools.table.table-hover.table-bordered
+                      thead
+                        tr
+                          th Rank
+                          th Name
+                          th Email
+                          th Score
+                      tbody
+                        -var i = 0;
+                        each user in users
+                          tr
+                            td #{++i}
+                            td #{user.name}
+                            td #{user.email}
+                            td #{user.score}
+

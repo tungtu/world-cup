@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+    .top-content
+        .container
+            include ../header
+            .row
+                .col-sm-8.col-sm-offset-2.text
+                    h1
+                        strong List Posts
+            .row.mb-30
+                .col-sm-1.mb-20
+                    a.btn.btn-primary(href='/admin', role='button') Go Back!
+                .col-sm-12.form-box
+                    .form-top
+                            a.btn.btn-primary(href='/admin/post/new', role='button' data-toggle="modal" data-target="#modalLarge").pull-right Add Post
+                    .form-top
+                        include ../../site/message-alert
+                        table.datatable-tabletools.table.table-hover.table-bordered
+                            thead
+                                tr
+                                    th Post Name
+                                    th Category
+                                    th Description
+                                    th(width="165px") Action
+                            tbody
+                                each post in posts
+                                    tr
+                                        td #{post.name}
+                                        td
+                                            each category in categories
+                                                if category._id.equals(post.category_id) == true
+                                                    span #{category.name}
+                                                    -break
+                                        td #{post.description}
+                                        td
+                                            a(href='/admin/post/show?post_id=#{post._id}' data-toggle="modal" data-target="#modalLarge").btn.btn-info.mr-5 Show
+                                            a(href='/admin/post/edit?post_id=#{post._id}' data-toggle="modal" data-target="#modalLarge").btn.btn-primary Edit
+                                            form(action='/admin/post/delete', method='post').btn-delete
+                                                input(type='hidden', value='#{post._id}', name='post_id')
+                                                button(type='button').btn.btn-danger Delete

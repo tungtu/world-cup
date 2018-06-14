@@ -1,0 +1,26 @@
+extends ../../modal
+
+block title
+  strong Add New Match
+
+block content
+    .row
+      .col-sm-12
+        .form-top
+          form.login-form(role='form', action='/match/create', method='post')
+            .form-group
+              label(for='form-team_a') TEAM A
+              select#form-team_a.form-control(name='team_a')
+                each team in teams
+                  option(value='#{team.name}') Group#{team.group} - #{team.name}
+            .form-group
+              label(for='form-team_b') TEAM B
+              select#form-team_b.form-control(name='team_b')
+                each team in teams
+                  option(value='#{team.name}') Group#{team.group} - #{team.name}
+            .form-group
+              label(for='form-date') DATE
+              input#form-date.form-control(name='date', type='datetime-local')
+
+            button.btn(type='submit').btn-primary.btn-block Create
+

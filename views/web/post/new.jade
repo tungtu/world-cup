@@ -1,0 +1,25 @@
+extends ../../modal
+
+block title
+  strong Add New Post
+
+block content
+  .row
+    .col-sm-12
+      .form-top
+        form.login-form(role='form', action='create', method='post')
+          .form-group
+            label(for='form-name') Name
+            input#form-name.form-control(type='text', name='name', placeholder='Enter post name.')
+          .form-group
+            label(for='form-description') Description
+            textarea#form-description.form-control(name='description', placeholder='Enter post description.')
+          .form-group
+            label(for='form-content') Content
+            textarea#form-content.form-control(name='content', placeholder='Enter post content.')
+          .form-group
+            label(for='form-category_id') Category Name
+            select#form-category_id.form-control(name='category_id')
+              each category in categories
+                option(value='#{category._id}') #{category.name}
+          button.btn(type='submit').btn-primary.btn-block Add

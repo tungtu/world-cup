@@ -1,0 +1,15 @@
+extends ../modal
+
+block title
+  strong My Profile
+
+block content
+  .row
+    .col-sm-12
+      .form-top
+        form.login-form(role='form', action='update', method='post')
+          .form-group
+            label(for='form-name') Name
+            input#form-name.form-name.form-control(type='text', name='name', value=admin.name placeholder="Enter your name")
+
+          button.btn(type='submit').btn-primary.btn-block Update

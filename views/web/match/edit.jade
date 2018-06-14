@@ -1,0 +1,38 @@
+extends ../../modal
+
+block title
+  strong Edit Match
+
+block content
+  .row
+    .col-sm-12
+      .form-top
+        form.login-form(role='form', action='/match/update', method='post')
+          .form-group
+            label(for='form-team_a') TEAM A
+            select#form-team_a.form-control(name='team_a')
+              each team in teams
+                if team.name == match.team_a
+                  option(value='#{team.name}', selected) #{team.name}
+                else
+                  option(value='#{team.name}') #{team.name}
+          .form-group
+            label(for='form-team_b') TEAM B
+            select#form-team_b.form-control(name='team_b')
+              each team in teams
+                if team.name == match.team_b
+                  option(value='#{team.name}', selected) #{team.name}
+                else
+                  option(value='#{team.name}') #{team.name}
+          .form-group
+            label(for='form-date') DATE
+            input#form-date.form-control(name='date', type='datetime-local', value=match.date)
+          .form-group
+            label(for='form-result') RESULT
+            select#form-result.form-control(name='result')
+              option(value='') Select
+              option(value='team_a') TEAM A
+              option(value='team_b') TEAM B
+          .form-group
+            input.sr-only.form-control(type='hidden', name='prevmatch_id', value=match._id)
+          button.btn(type='submit').btn-primary.btn-block Update

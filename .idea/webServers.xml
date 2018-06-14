@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="31b5c191-b0cd-4cb8-ba7c-20d54626c7ef" name="42.115.221.43" url="http://42.115.221.30">
+        <fileTransfer host="42.115.221.30" port="22" privateKey="$USER_HOME$/Downloads/privatekey.ppk" rootFolder="/home/centos" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

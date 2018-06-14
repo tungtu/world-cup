@@ -1,0 +1,19 @@
+extends ../../modal
+
+block title
+  strong Assign Course to a Faculty
+
+block content
+  .row
+    .col-sm-12
+      .form-top
+        form.login-form(role='form', action='/admin/faculties/assign', method='post')
+          .form-group
+            label(for='form-username') Username
+            input#form-username.form-username.form-control(type='text', name='username', placeholder='Username...')
+          .form-group
+            label(for='form-course_id') Course Name
+            select#form-course_id.form-course_id.form-control(name='course_id')
+              each course in courses
+                option(value='#{course._id}') #{course.course_name}
+          button.btn(type='submit').btn-primary.btn-block Assign

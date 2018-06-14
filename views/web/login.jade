@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .top-content
+    .inner-bg
+      .container
+        .row
+          .col-sm-4.col-sm-offset-4.form-box
+            .form-top
+              include message-error
+              h1
+                center Welcome to World Cup 2018
+              br
+              a.btn.btn-danger.btn-block(href="/auth/google")
+                span.fa.fa-google  Google

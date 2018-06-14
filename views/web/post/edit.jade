@@ -1,0 +1,30 @@
+extends ../../modal
+
+block title
+  strong Edit Faculty
+
+block content
+  .row
+    .col-sm-12
+      .form-top
+        form.login-form(role='form', action='update', method='post')
+          .form-group
+            label(for='form-name') Name
+            input#form-name.form-control(type='text', name='name', placeholder='Enter post name.', value=post.name)
+          .form-group
+            label(for='form-description') Description
+            textarea#form-description.form-control(name='description', placeholder='Enter post description.') #{post.description}
+          .form-group
+            label(for='form-content') Content
+            textarea#form-content.form-control(name='content', placeholder='Enter post content.') #{post.content}
+          .form-group
+            label(for='form-category_id') Category Name
+            select#form-category_id.form-control(name='category_id')
+              each category in categories
+                if category._id.equals(post.category_id) == true
+                  option(value=category._id, selected) #{category.name}
+                else
+                  option(value=category._id) #{category.name}
+          .form-group
+            input.sr-only.form-control(type='hidden', name='prevpost_id', value=post._id)
+          button.btn(type='submit').btn-primary.btn-block Update

@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+    .top-content
+        .container
+            include ../header
+            .row
+                .col-sm-8.col-sm-offset-2.text
+                    h1
+                        strong List Match
+            .row.mb-30
+                .col-sm-1.mb-20
+                    a.btn.btn-primary(href='/', role='button') Go Back!
+                .col-sm-12.form-box
+                    .form-top
+                             a.btn.btn-primary(href='/match/new', role='button' data-toggle="modal" data-target="#modalLarge").pull-right Add Match
+                    .form-top
+                        include ../../web/message-alert
+                        table.datatable-tabletools.table.table-hover.table-bordered
+                            thead
+                                tr
+                                    th TEAM A
+                                    th TEAM B
+                                    th Date
+                                    th Result
+                                    th(width="165px") Action
+                            tbody
+                                each match in matches
+                                    tr
+                                        td #{match.team_a}
+                                        td #{match.team_b}
+                                        td #{match.date}
+                                        td #{match.result}
+                                        td
+                                            a(href='/match/edit?match_id=#{match._id}' , role='button' data-toggle="modal" data-target="#modalLarge").btn.btn-primary Edit
+                                            form(action='/match/delete', method='post').btn-delete
+                                                input(type='hidden', value='#{match._id}', name='match_id')
+                                                button(type='button').btn.btn-danger Delete

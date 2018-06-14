@@ -1,0 +1,25 @@
+extends ../../modal
+
+block title
+  strong Show Post Details
+
+block content
+  .row
+    .col-sm-12
+      .form-top
+        .form-group
+          label(for='form-name') Permalink:
+          br
+          a.text-primary(href='/#{category.name}/#{post.slug}', target='_blank') /#{category.name}/#{post.slug}
+        .form-group
+          label(for='form-name') Name
+          input#form-name.form-control(type='text', disabled, value=post.name)
+        .form-group
+          label(for='form-description') Description
+          textarea#form-description.form-control(disabled) #{post.description}
+        .form-group
+          label(for='form-content') Content
+          textarea#form-content.form-control(disabled) #{post.content}
+        .form-group
+          label(for='form-category_id') Category Name
+          input#form-name.form-control(type='text', disabled, value=category.name)
