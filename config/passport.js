@@ -38,6 +38,10 @@ module.exports = function (passport) {
 						user.usertype = 'user';
 						return done(null, user);
 					} else {
+						var domain = profile.emails[0].value.replace(/.*@/, "");
+						if (domain != 'topica.edu.vn')
+							return done(null, false, { message: 'Please using email Topica to login.' });
+
 						var newUser = {
 							google_id    : profile.id,
 							token : token,
@@ -51,7 +55,7 @@ module.exports = function (passport) {
 
 						User.create( newUser, function(err, user) {
 							if (err)
-								return done(null, false, req.flash('loginMessage', 'Some error occured.'));
+								return done(null, false, { message: 'Some error occured.' });
 							else{
 								user.usertype = 'user';
 								return done(null, newUser);

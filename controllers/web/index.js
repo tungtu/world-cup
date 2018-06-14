@@ -33,7 +33,7 @@ router.get('/login', function (req, res) {
 		res.redirect("/home");
 	else {
 		res.render('web/login', {
-			error: req.flash('loginMessage')
+			message: req.flash('error')
 		});
 	}
 });
@@ -43,8 +43,8 @@ router.get('/auth/google', passport.authenticate('google', { scope : ['profile',
 router.get('/auth/google/callback',
 	passport.authenticate('google', {
 		successRedirect : '/home',
-		failureRedirect : '/',
-		failureFlash: true
+		failureRedirect : '/login',
+		failureFlash : true
 	}));
 
 router.get('/home', isLoggedInAdmin, function (req, res) {
