@@ -63,12 +63,16 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 							else {
 								// var date_current = new Date();
 								var date_current = new Date();
+								var date_next = new Date(date_current.getTime() + 86400000);
 								var data = obj.groups;
 								var matches = [];
 
 								for (var k in data) {
 									for (var j in data[k].matches) {
 										if (data[k].matches[j].finished == false && new Date(data[k].matches[j].date).toDateString() == date_current.toDateString()) {
+											matches.push(data[k].matches[j]);
+										}
+										if (data[k].matches[j].finished == false && new Date(data[k].matches[j].date).toDateString() == date_next.toDateString()) {
 											matches.push(data[k].matches[j]);
 										}
 									}
