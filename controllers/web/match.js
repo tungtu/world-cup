@@ -55,6 +55,8 @@ router.get('/choose', isLoggedInAsAdmin, function (req, res) {
 	})
 });
 
+var type_score = require('../../config/score');
+
 router.get('/refresh', function (req, res) {
 	User.getAll(function (err, users) {
 		if (err)
@@ -64,21 +66,30 @@ router.get('/refresh', function (req, res) {
 				if (!error && response.statusCode == 200) {
 					var obj = JSON.parse(body);
 					var data = obj.groups;
-
+					var score = 1;
 					for (var k in data) {
+						if (data[k].name.slice(0,5) == "Group")
+							score = type_score['Group'];
+
 						for (var j in data[k].matches) {
 							users.forEach(function(user) {
 								if (!user.status.includes(data[k].matches[j].name.toString()))
 									for (var u in user.matches) {
 										if (data[k].matches[j].name == user.matches[u].match_name) {
 											if (data[k].matches[j].home_result < data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].away_team) {
-												User.updateScore(user._id, {score: user.score + 1 }, user.matches[u].match_name, function (err, doc) {
+												User.updateScore(user._id, {score: user.score + score }, user.matches[u].match_name, function (err, doc) {
 													if (err)
 														res.send("Some error occured");
 												})
 											}
 											else if(data[k].matches[j].home_result > data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].home_team){
-												User.updateScore(user._id, {score: user.score + 1}, user.matches[u].match_name, function (err, doc) {
+												User.updateScore(user._id, {score: user.score + score }, user.matches[u].match_name, function (err, doc) {
+													if (err)
+														res.send("Some error occured");
+												})
+											}
+											else if(data[k].matches[j].home_result == data[k].matches[j].away_result && user.matches[u].choose == 'draw'){
+												User.updateScore(user._id, {score: user.score + score }, user.matches[u].match_name, function (err, doc) {
 													if (err)
 														res.send("Some error occured");
 												})

@@ -1,7 +1,7 @@
 module.exports = {
-	'normal': 1,
-	'1/6': 2,
-	'tu-ket': 3,
-	'ban-ket': 4,
-	'chung-ket': 8,
+	'Group': 1,
+	'Round of 16': 2,
+	'Quarter-finals': 3,
+	'Semi-finals': 4,
+	'Final': 8,
 };

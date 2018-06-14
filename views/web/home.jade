@@ -23,8 +23,10 @@ block content
                               if (!matches_name.includes(match.name.toString()))
                                 a.btn.btn-primary.mt-20(href='/match/choose?match_name=#{match.name}&c=#{team.id}', role='button') Choose
                       .col-sm-4
-                        center
+                        center(style="margin-top:130px")
                           h3 VS
+                          if (!matches_name.includes(match.name.toString()))
+                            a.btn.btn-primary(href='/match/choose?match_name=#{match.name}&c=draw', role='button', style="margin-top:20px") Choose Draw
                       .col-sm-4
                         center
                           each team in teams
