@@ -41,9 +41,11 @@ router.get('/lock', isLoggedInAsAdmin, function (req, res) {
 router.get('/choose', isLoggedInAsAdmin, function (req, res) {
 	var match_name = req.query.match_name;
 	var choose = req.query.c;
+	var time = new Date();
 	var matches = {
 		match_name : match_name,
-		choose: choose
+		choose: choose,
+		time: time
 	};
 	User.update(req.user._id, matches, function (err, doc) {
 		if (err)
