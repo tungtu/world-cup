@@ -26,7 +26,7 @@ block content
                                 each user in users
                                   each u in user.matches
                                     if (u.match_name == match.name && u.choose.toString() == team.id.toString())
-                                      li #{user.name} (#{u.time})
+                                      li #{user.name}
 
 
                       .col-sm-4
@@ -38,7 +38,7 @@ block content
                             each user in users
                               each u in user.matches
                                 if (u.match_name == match.name && u.choose.toString() == 'draw')
-                                  li #{user.name} (#{u.time})
+                                  li #{user.name}
                       .col-sm-4
                         center
                           each team in teams
@@ -51,7 +51,7 @@ block content
                                 each user in users
                                   each u in user.matches
                                     if (u.match_name == match.name && u.choose.toString() == team.id.toString())
-                                      li #{user.name} (#{u.time})
+                                      li #{user.name}
                   hr
 
           .row.mb-30.mt-30.bg-white
