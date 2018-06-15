@@ -102,16 +102,31 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 	});
 });
 
-router.get('/profile', isLoggedInAdmin, function (req, res) {
-	var username = req.user.username;
-	Admin.getByUserName(username, function (err, doc) {
-		if (err)
-			res.send("Some error occured");
-		else {
-			if (doc)
-				res.render('web/profile', {admin: doc});
-			else
-				res.redirect(default_route);
+router.get('/history', isLoggedInAdmin, function (req, res) {
+	request.get(url, function (error, response, body) {
+		if (!error && response.statusCode == 200) {
+			var obj = JSON.parse(body);
+			User.getAll(function (err, users) {
+				if (err)
+					res.send("Some error occured");
+				else {
+					if (users) {
+
+						User.getByID(req.user._id.toString(), function (err, user) {
+							if (err)
+								res.send("Some error occured");
+							else {
+								res.render('web/history', {
+									curent_user: user,
+									users: users,
+									teams: obj.teams,
+									groups: obj.groups,
+								});
+							}
+						})
+					}
+				}
+			});
 		}
 	});
 });
