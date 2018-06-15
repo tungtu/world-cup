@@ -45,7 +45,7 @@ router.get('/choose', isLoggedInAsAdmin, function (req, res) {
 	var matches = {
 		match_name : match_name,
 		choose: choose,
-		time: time
+		time: time.toLocaleString()
 	};
 	User.update(req.user._id, matches, function (err, doc) {
 		if (err)
