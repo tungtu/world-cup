@@ -43,7 +43,7 @@ router.get('/choose', isLoggedInAsAdmin, function (req, res) {
 	var choose = req.query.c;
 	var time = new Date();
 	var matches = {
-		match_name : match_name,
+		match_name: match_name,
 		choose: choose,
 		time: time.toLocaleString()
 	};
@@ -66,48 +66,50 @@ router.get('/refresh', function (req, res) {
 		else {
 			request.get(url, function (error, response, body) {
 				if (!error && response.statusCode == 200) {
-					var obj = JSON.parse(body);
-					var data = obj.groups;
-					var score = 1;
-					for (var k in data) {
-						if (data[k].name.slice(0,5) == "Group")
+					let obj = JSON.parse(body);
+					let data = obj.groups;
+					let score = 1;
+					for (let k in data) {
+						if (data[k].name.slice(0, 5) == "Group")
 							score = parseInt(type_score['Group']);
 
-						console.log("score ============= "+score);
-						for (var j in data[k].matches) {
-							if(data[k].matches[j].finished == true)
-								users.forEach(function(user) {
-								if (!user.status.includes(data[k].matches[j].name.toString()))
-									for (var u in user.matches) {
-										if (data[k].matches[j].name == user.matches[u].match_name) {
-											if (data[k].matches[j].home_result < data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].away_team) {
-												User.updateScore(user._id, {score: parseInt(user.score) + score }, user.matches[u].match_name, function (err, doc) {
-													if (err)
-														res.send("Some error occured");
-												})
-											}
-											else if(data[k].matches[j].home_result > data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].home_team){
-												User.updateScore(user._id, {score: parseInt(user.score) + score }, user.matches[u].match_name, function (err, doc) {
-													if (err)
-														res.send("Some error occured");
-												})
-											}
-											else if(data[k].matches[j].home_result == data[k].matches[j].away_result && user.matches[u].choose == 'draw'){
-												User.updateScore(user._id, {score: parseInt(user.score) + score }, user.matches[u].match_name, function (err, doc) {
-													if (err)
-														res.send("Some error occured");
-												})
-											}
-											else{
-												User.updateScore(user._id, {score: parseInt(user.score) }, user.matches[u].match_name, function (err, doc) {
-													if (err)
-														res.send("Some error occured");
-												})
-											}
+						for (let j in data[k].matches) {
+							if (data[k].matches[j].finished == true) {
+								users.forEach(function (user) {
+									let t;
+									if (!user.status.includes(data[k].matches[j].name.toString())) {
+										for (let u in user.matches) {
+											if (data[k].matches[j].name == user.matches[u].match_name) {
+												if (data[k].matches[j].home_result < data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].away_team) {
+													t = user.matches[u];
+													User.updateScore(user._id.toString(), score, t.match_name, function (err, _doc) {
+													})
 
+												}
+												else if (data[k].matches[j].home_result > data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].home_team) {
+													t = user.matches[u];
+													User.updateScore(user._id.toString(), score, t.match_name, function (err, _doc) {
+
+													})
+												}
+												else if (data[k].matches[j].home_result == data[k].matches[j].away_result && user.matches[u].choose == 'draw') {
+													t = user.matches[u];
+													User.updateScore(user._id.toString(), score, t.match_name, function (err, _doc) {
+
+													})
+												}
+												else {
+													t = user.matches[u];
+													User.updateScore(user._id.toString(), 0, t.match_name, function (err, _doc) {
+														// console.log('error'+err);
+													})
+												}
+
+											}
 										}
 									}
-							});
+								});
+							}
 						}
 					}
 
