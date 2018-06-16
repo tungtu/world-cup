@@ -36,7 +36,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(session({secret: 'my_app_secret'}));
+app.use(session({
+	secret: 'my_app_secret',
+	cookie: { maxAge: 86400000 }
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
