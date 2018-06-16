@@ -38,7 +38,7 @@ app.set('view engine', 'jade');
 
 app.use(session({
 	secret: 'my_app_secret',
-	cookie: { maxAge: 86400000 }
+	cookie: { maxAge: 86400000 * 10 }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
