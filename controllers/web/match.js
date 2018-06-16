@@ -97,6 +97,12 @@ router.get('/refresh', function (req, res) {
 														res.send("Some error occured");
 												})
 											}
+											else{
+												User.updateScore(user._id, {score: user.score }, user.matches[u].match_name, function (err, doc) {
+													if (err)
+														res.send("Some error occured");
+												})
+											}
 
 										}
 									}
