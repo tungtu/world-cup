@@ -63,7 +63,7 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 							else {
 								// var date_current = new Date();
 								var date_current = new Date();
-								var date_next = new Date(date_current.getTime() + 86400000);
+								var date_next = new Date(date_current.getTime() + 86400000 * 2);
 								var data = obj.groups;
 								var matches = [];
 
