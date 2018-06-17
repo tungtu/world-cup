@@ -63,7 +63,8 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 							else {
 								// var date_current = new Date();
 								var date_current = new Date();
-								var date_next = new Date(date_current.getTime() + 86400000 * 2);
+								var date_next = new Date(date_current.getTime() + 86400000);
+								var date_next_2 = new Date(date_current.getTime() + 86400000 * 2);
 								var data = obj.groups;
 								var matches = [];
 
@@ -73,6 +74,9 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 											matches.push(data[k].matches[j]);
 										}
 										if (data[k].matches[j].finished == false && new Date(data[k].matches[j].date).toDateString() == date_next.toDateString()) {
+											matches.push(data[k].matches[j]);
+										}
+										if (data[k].matches[j].finished == false && new Date(data[k].matches[j].date).toDateString() == date_next_2.toDateString()) {
 											matches.push(data[k].matches[j]);
 										}
 									}
