@@ -50,6 +50,7 @@ jQuery(document).ready(function () {
 
 	//sweetalert
 	jQuery(".btn-choose").click(function (e) {
+		e.preventDefault();
 		var $this = jQuery(this);
 		swal({
 				title: "Mày có chắc chưa, đừng nghe ai dụ nha ?",
@@ -69,7 +70,6 @@ jQuery(document).ready(function () {
 					swal("Cancelled", "Suy nghĩ kĩ đi :)", "error");
 				}
 			});
-		e.preventDefault();
 	});
 
 	var alertMessage = jQuery(".alert-message");
