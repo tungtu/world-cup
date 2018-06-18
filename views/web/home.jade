@@ -21,7 +21,7 @@ block content
                               h1 #{team.name}
                               img(src=team.flag, height="150px", width="100%", style="display:block")
                               if (!matches_name.includes(match.name.toString()))
-                                a.btn.btn-primary.mt-20(href='/match/choose?match_name=#{match.name}&c=#{team.id}', role='button', style="display:block") Choose
+                                a.btn.btn-primary.mt-20.btn-choose(href='/match/choose?match_name=#{match.name}&c=#{team.id}', role='button', style="display:block") Choose
                               ul.mt-20.list-unstyled List User Choose
                                 each user in users
                                   each u in user.matches
@@ -33,7 +33,7 @@ block content
                         center(style="margin-top:130px")
                           h3 VS
                           if (!matches_name.includes(match.name.toString()))
-                            a.btn.btn-primary(href='/match/choose?match_name=#{match.name}&c=draw', role='button', style="margin-top:80px; display:block") Choose Draw
+                            a.btn.btn-primary.btn-choose(href='/match/choose?match_name=#{match.name}&c=draw', role='button', style="margin-top:80px; display:block") Choose Draw
                           ul.mt-20.list-unstyled List User Choose
                             each user in users
                               each u in user.matches
@@ -46,7 +46,7 @@ block content
                               h1 #{team.name}
                               img(src=team.flag, height="150px", width="100%", style="display:block")
                               if (!matches_name.includes(match.name.toString()))
-                                a.btn.btn-primary.mt-20(href='/match/choose?match_name=#{match.name}&c=#{team.id}', role='button', style="display:block") Choose
+                                a.btn.btn-primary.mt-20.btn-choose(href='/match/choose?match_name=#{match.name}&c=#{team.id}', role='button', style="display:block") Choose
                               ul.mt-20.list-unstyled List User Choose
                                 each user in users
                                   each u in user.matches

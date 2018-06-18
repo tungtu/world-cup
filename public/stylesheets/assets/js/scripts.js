@@ -49,26 +49,27 @@ jQuery(document).ready(function () {
 	});
 
 	//sweetalert
-	jQuery(".btn-delete").click(function () {
+	jQuery(".btn-choose").click(function (e) {
 		var $this = jQuery(this);
 		swal({
-				title: "Are you sure?",
-				text: "You will not be able to recover this data!",
+				title: "Mày có chắc chưa, đừng nghe ai dụ nha ?",
+				text: "Chọn rồi là không được chọn lại đâu nha!",
 				type: "warning",
 				showCancelButton: true,
 				confirmButtonColor: "#DD6B55",
-				confirmButtonText: "Yes, delete it!",
-				cancelButtonText: "No, cancel plx!",
+				confirmButtonText: "Ok, Tao biết rồi!",
+				cancelButtonText: "Từ từ đợi xí!",
 				closeOnConfirm: false,
 				closeOnCancel: false
 			},
 			function (isConfirm) {
 				if (isConfirm) {
-					$this.submit();
+					window.location = $this.attr('href');
 				} else {
-					swal("Cancelled", "Your data is safe :)", "error");
+					swal("Cancelled", "Suy nghĩ kĩ đi :)", "error");
 				}
 			});
+		e.preventDefault();
 	});
 
 	var alertMessage = jQuery(".alert-message");

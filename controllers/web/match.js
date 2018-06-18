@@ -51,7 +51,7 @@ router.get('/choose', isLoggedInAsAdmin, function (req, res) {
 		if (err)
 			res.send("Some error occured");
 		else {
-			req.flash('alert', "Success!, Your data has been store., success");
+			req.flash('alert', "Success!, Chúc may mắn ... lần sau :))., success");
 			res.redirect('/home');
 		}
 	})
