@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83b60e4b-6236-4037-8f36-272bb17af387" name="Default" comment="" />
+    <list default="true" id="83b60e4b-6236-4037-8f36-272bb17af387" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/views/web/history.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/web/history.jade" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -35,8 +37,8 @@
       <file leaf-file-name="history.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/web/history.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="50" column="95" lean-forward="true" selection-start-line="50" selection-start-column="95" selection-end-line="50" selection-end-column="95" />
+            <state relative-caret-position="253">
+              <caret line="49" column="95" lean-forward="true" selection-start-line="49" selection-start-column="95" selection-end-line="49" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -131,7 +133,7 @@
       <path value="$PROJECT_DIR$/public/vendor/sweetalert/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="721" />
@@ -224,16 +226,15 @@
       <workItem from="1528997017082" duration="3620000" />
       <workItem from="1529118575542" duration="12466000" />
       <workItem from="1529253268197" duration="73000" />
-      <workItem from="1529253425131" duration="2780000" />
+      <workItem from="1529253425131" duration="3061000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84838000" />
+    <option name="totallyTimeSpent" value="85119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="721" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32956383" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.16639742" />
@@ -575,8 +576,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/web/history.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="50" column="95" lean-forward="true" selection-start-line="50" selection-start-column="95" selection-end-line="50" selection-end-column="95" />
+        <state relative-caret-position="253">
+          <caret line="49" column="95" lean-forward="true" selection-start-line="49" selection-start-column="95" selection-end-line="49" selection-end-column="95" />
         </state>
       </provider>
     </entry>
