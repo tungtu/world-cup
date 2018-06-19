@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83b60e4b-6236-4037-8f36-272bb17af387" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/views/web/history.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/web/history.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/web/home.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/web/home.jade" afterDir="false" />
-    </list>
+    <list default="true" id="83b60e4b-6236-4037-8f36-272bb17af387" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -38,8 +35,8 @@
       <file leaf-file-name="history.jade" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/web/history.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="39" column="94" lean-forward="true" selection-start-line="39" selection-start-column="94" selection-end-line="39" selection-end-column="94" />
+            <state relative-caret-position="344">
+              <caret line="50" column="95" lean-forward="true" selection-start-line="50" selection-start-column="95" selection-end-line="50" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -227,12 +224,12 @@
       <workItem from="1528997017082" duration="3620000" />
       <workItem from="1529118575542" duration="12466000" />
       <workItem from="1529253268197" duration="73000" />
-      <workItem from="1529253425131" duration="2449000" />
+      <workItem from="1529253425131" duration="2780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84507000" />
+    <option name="totallyTimeSpent" value="84838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="721" extended-state="0" />
@@ -578,8 +575,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/web/history.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="39" column="94" lean-forward="true" selection-start-line="39" selection-start-column="94" selection-end-line="39" selection-end-column="94" />
+        <state relative-caret-position="344">
+          <caret line="50" column="95" lean-forward="true" selection-start-line="50" selection-start-column="95" selection-end-line="50" selection-end-column="95" />
         </state>
       </provider>
     </entry>
