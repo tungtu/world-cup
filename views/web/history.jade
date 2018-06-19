@@ -48,4 +48,10 @@ block content
                                                         each user in users
                                                             each u in user.matches
                                                                 if (u.match_name == match.name)
-                                                                    li #{user.name} (#{u.time}) [#{u.choose}]
+                                                                    li #{user.name} (#{u.time})
+                                                                        if (match.home_team == u.choose)
+                                                                            span [home_team]
+                                                                        else if (match.home_team == u.choose)
+                                                                            span [away_team]
+                                                                        else if (u.choose == 'draw')
+                                                                            span [draw]
