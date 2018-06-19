@@ -62,6 +62,7 @@ block content
                   table.datatable-tabletools.table.table-hover.table-bordered
                     thead
                       tr
+                        th ID
                         th GROUP
                         th Home Team
                         th Away Team
@@ -75,6 +76,7 @@ block content
                       each group in groups
                         each match in group.matches
                           tr
+                            td #{match.name}
                             td #{group.name}
                               each team in teams
                                 if team.id == match.home_team
