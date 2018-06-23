@@ -25,7 +25,7 @@ block content
                               ul.mt-20.list-unstyled List User Choose
                                 each u in curent_user.matches
                                   if (u.match_name == match.name && u.choose.toString() == team.id.toString())
-                                    li #{user.name}
+                                    li #{curent_user.name}
 
 
                       .col-sm-4
@@ -36,7 +36,7 @@ block content
                           ul.mt-20.list-unstyled List User Choose
                             each u in curent_user.matches
                               if (u.match_name == match.name && u.choose.toString() == 'draw')
-                                li #{user.name}
+                                li #{curent_user.name}
                       .col-sm-4
                         center
                           each team in teams
@@ -48,7 +48,7 @@ block content
                               ul.mt-20.list-unstyled List User Choose
                                 each u in curent_user.matches
                                   if (u.match_name == match.name && u.choose.toString() == team.id.toString())
-                                    li #{user.name}
+                                    li #{curent_user.name}
                   hr
 
           .row.mb-30.mt-30.bg-white
