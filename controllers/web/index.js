@@ -70,13 +70,10 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 
 								for (var k in data) {
 									for (var j in data[k].matches) {
-										if (data[k].matches[j].finished == false && new Date(data[k].matches[j].date).toDateString() == date_current.toDateString()) {
-											matches.push(data[k].matches[j]);
-										}
-										if (data[k].matches[j].finished == false && new Date(data[k].matches[j].date).toDateString() == date_next.toDateString()) {
-											matches.push(data[k].matches[j]);
-										}
-										if (data[k].matches[j].finished == false && new Date(data[k].matches[j].date).toDateString() == date_next_2.toDateString()) {
+										if (data[k].matches[j].finished == false &&
+											new Date(data[k].matches[j].date).toLocaleString() > date_current.toLocaleString() &&
+											new Date(data[k].matches[j].date).toLocaleDateString() <= date_next_2.toLocaleDateString()
+										) {
 											matches.push(data[k].matches[j]);
 										}
 									}

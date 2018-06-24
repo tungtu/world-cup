@@ -30,7 +30,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// console.log(new Date().toLocaleString());
+// console.log(new Date("2018-06-25T18:00:00+03:00").toLocaleTimeString());
+// console.log(new Date("2018-06-25T17:00:00+05:00").toLocaleTimeString());
+// var date_current = new Date();
+// var date_next_2 = new Date(date_current.getTime() + 86400000 * 2).toLocaleDateString();
+// console.log(date_next_2);
+// console.log(b = new Date("Thu Jun 28 2018").toLocaleDateString());
+// console.log(date_next_2 >= b);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
