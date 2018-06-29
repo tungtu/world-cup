@@ -23,22 +23,23 @@ block content
                               if (!matches_name.includes(match.name.toString()))
                                 a.btn.btn-primary.mt-20.btn-choose(href='/match/choose?match_name=#{match.name}&c=#{team.id}', role='button', style="display:block") Choose
                               ul.mt-20.list-unstyled List User Choose
-                                each user in users
-                                  each u in user.matches
-                                    if (u.match_name == match.name && u.choose.toString() == team.id.toString())
-                                      li #{user.name}
+                                if (new Date(match.date).toLocaleString() <= new Date().toLocaleString())
+                                  each user in users
+                                    each u in user.matches
+                                      if (u.match_name == match.name && u.choose.toString() == team.id.toString())
+                                        li #{user.name}
 
 
                       .col-sm-4
                         center(style="margin-top:130px")
                           h3 VS
-                          if (!matches_name.includes(match.name.toString()))
-                            a.btn.btn-primary.btn-choose(href='/match/choose?match_name=#{match.name}&c=draw', role='button', style="margin-top:80px; display:block") Choose Draw
-                          ul.mt-20.list-unstyled List User Choose
-                            each user in users
-                              each u in user.matches
-                                if (u.match_name == match.name && u.choose.toString() == 'draw')
-                                  li #{user.name}
+                          //if (!matches_name.includes(match.name.toString()))
+                          //  a.btn.btn-primary.btn-choose(href='/match/choose?match_name=#{match.name}&c=draw', role='button', style="margin-top:80px; display:block") Choose Draw
+                          //ul.mt-20.list-unstyled List User Choose
+                          //  each user in users
+                          //    each u in user.matches
+                          //      if (u.match_name == match.name && u.choose.toString() == 'draw')
+                          //        li #{user.name}
                       .col-sm-4
                         center
                           each team in teams
@@ -48,10 +49,11 @@ block content
                               if (!matches_name.includes(match.name.toString()))
                                 a.btn.btn-primary.mt-20.btn-choose(href='/match/choose?match_name=#{match.name}&c=#{team.id}', role='button', style="display:block") Choose
                               ul.mt-20.list-unstyled List User Choose
-                                each user in users
-                                  each u in user.matches
-                                    if (u.match_name == match.name && u.choose.toString() == team.id.toString())
-                                      li #{user.name}
+                                if (new Date(match.date).toLocaleString() <= new Date().toLocaleString())
+                                  each user in users
+                                    each u in user.matches
+                                      if (u.match_name == match.name && u.choose.toString() == team.id.toString())
+                                        li #{user.name}
                   hr
 
           .row.mb-30.mt-30.bg-white
@@ -81,9 +83,13 @@ block content
                               each team in teams
                                 if team.id == match.home_team
                                   td #{team.emojiString} #{team.name}
+                              if 'Round of 16' != group.name
+                                td Waiting
                               each team in teams
                                 if team.id == match.away_team
                                   td #{team.emojiString} #{team.name}
+                              if 'Round of 16' != group.name
+                                td Waiting
                             td #{new Date(match.date).toLocaleString()}
                             td #{match.finished}
                             td #{match.home_result}

@@ -67,11 +67,12 @@ router.get('/refresh', function (req, res) {
 			request.get(url, function (error, response, body) {
 				if (!error && response.statusCode == 200) {
 					let obj = JSON.parse(body);
-					let data = obj.groups;
+					let data = obj.knockout;
 					let score = 1;
 					for (let k in data) {
-						if (data[k].name.slice(0, 5) == "Group")
-							score = parseInt(type_score['Group']);
+						// if (data[k].name.slice(0, 5) == "Group")
+						// 	score = parseInt(type_score['Group']);
+						score = parseInt(type_score[data[k].name]);
 
 						for (let j in data[k].matches) {
 							if (data[k].matches[j].finished == true) {
@@ -80,19 +81,25 @@ router.get('/refresh', function (req, res) {
 									if (!user.status.includes(data[k].matches[j].name.toString())) {
 										for (let u in user.matches) {
 											if (data[k].matches[j].name == user.matches[u].match_name) {
-												if (data[k].matches[j].home_result < data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].away_team) {
-													t = user.matches[u];
-													User.updateScore(user._id.toString(), score, t.match_name, function (err, _doc) {
-													})
-
-												}
-												else if (data[k].matches[j].home_result > data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].home_team) {
-													t = user.matches[u];
-													User.updateScore(user._id.toString(), score, t.match_name, function (err, _doc) {
-
-													})
-												}
-												else if (data[k].matches[j].home_result == data[k].matches[j].away_result && user.matches[u].choose == 'draw') {
+												// if (data[k].matches[j].home_result < data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].away_team) {
+												// 	t = user.matches[u];
+												// 	User.updateScore(user._id.toString(), score, t.match_name, function (err, _doc) {
+												// 	})
+												//
+												// }
+												// else if (data[k].matches[j].home_result > data[k].matches[j].away_result && user.matches[u].choose == data[k].matches[j].home_team) {
+												// 	t = user.matches[u];
+												// 	User.updateScore(user._id.toString(), score, t.match_name, function (err, _doc) {
+												//
+												// 	})
+												// }
+												// else if (data[k].matches[j].home_result == data[k].matches[j].away_result && user.matches[u].choose == 'draw') {
+												// 	t = user.matches[u];
+												// 	User.updateScore(user._id.toString(), score, t.match_name, function (err, _doc) {
+												//
+												// 	})
+												// }
+												if (data[k].matches[j].winner == user.matches[u].choose) {
 													t = user.matches[u];
 													User.updateScore(user._id.toString(), score, t.match_name, function (err, _doc) {
 

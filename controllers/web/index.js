@@ -65,13 +65,12 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 								var date_current = new Date();
 								var date_next = new Date(date_current.getTime() + 86400000);
 								var date_next_2 = new Date(date_current.getTime() + 86400000 * 2);
-								var data = obj.groups;
+								var data = obj.knockout;
 								var matches = [];
 
 								for (var k in data) {
 									for (var j in data[k].matches) {
 										if (data[k].matches[j].finished == false &&
-											new Date(data[k].matches[j].date).toLocaleString() > date_current.toLocaleString() &&
 											new Date(data[k].matches[j].date).toLocaleDateString() <= date_next_2.toLocaleDateString()
 										) {
 											matches.push(data[k].matches[j]);
@@ -89,7 +88,7 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 									curent_user: user,
 									users: users,
 									teams: obj.teams,
-									groups: obj.groups,
+									groups: data,
 									matches: matches,
 									matches_name: matches_name,
 									alert: req.flash('alert')
@@ -103,7 +102,7 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 	});
 });
 
-router.get('/history', isLoggedInAdmin, function (req, res) {
+router.get('/1history', isLoggedInAdmin, function (req, res) {
 	request.get(url, function (error, response, body) {
 		if (!error && response.statusCode == 200) {
 			var obj = JSON.parse(body);
@@ -121,7 +120,7 @@ router.get('/history', isLoggedInAdmin, function (req, res) {
 									curent_user: user,
 									users: users,
 									teams: obj.teams,
-									groups: obj.groups,
+									groups: obj.knockout,
 								});
 							}
 						})

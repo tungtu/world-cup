@@ -36,9 +36,13 @@ block content
                                                     each team in teams
                                                         if team.id == match.home_team
                                                             td #{team.emojiString} #{team.name}
+                                                    if 'Round of 16' != group.name
+                                                        td Waiting
                                                     each team in teams
                                                         if team.id == match.away_team
                                                             td #{team.emojiString} #{team.name}
+                                                    if 'Round of 16' != group.name
+                                                        td Waiting
                                                 td #{new Date(match.date).toLocaleString()}
                                                 td #{match.finished}
                                                 td #{match.home_result}
