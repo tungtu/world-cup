@@ -47,14 +47,28 @@ router.get('/choose', isLoggedInAsAdmin, function (req, res) {
 		choose: choose,
 		time: time.toLocaleString()
 	};
-	User.update(req.user._id, matches, function (err, doc) {
+	User.getByID(req.user._id.toString(), function (err, user) {
 		if (err)
 			res.send("Some error occured");
+		else if(user) {
+			if (!user.status.includes(match_name.toString())) {
+				User.update(req.user._id, matches, function (err, doc) {
+					if (err)
+						res.send("Some error occured");
+					else {
+						req.flash('alert', "Success!, Chúc may mắn ... lần sau :))., success");
+						res.redirect('/home');
+					}
+				})
+			}
+			else {
+				res.redirect('/home');
+			}
+		}
 		else {
-			req.flash('alert', "Success!, Chúc may mắn ... lần sau :))., success");
 			res.redirect('/home');
 		}
-	})
+	});
 });
 
 var type_score = require('../../config/score');
