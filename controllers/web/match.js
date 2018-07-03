@@ -51,18 +51,24 @@ router.get('/choose', isLoggedInAsAdmin, function (req, res) {
 		if (err)
 			res.send("Some error occured");
 		else if(user) {
-			if (!user.status.includes(match_name.toString())) {
-				User.update(req.user._id, matches, function (err, doc) {
-					if (err)
-						res.send("Some error occured");
-					else {
-						req.flash('alert', "Success!, Chúc may mắn ... lần sau :))., success");
-						res.redirect('/home');
-					}
-				})
-			}
-			else {
-				res.redirect('/home');
+			var flag = 0;
+			for (let u in user.matches) {
+				if (match_name == user.matches[u].match_name) {
+					flag = 1;
+				}
+				if (u == (user.matches.length -1) && flag == 0) {
+					User.update(req.user._id, matches, function (err, doc) {
+						if (err)
+							res.send("Some error occured");
+						else {
+							req.flash('alert', "Success!, Chúc may mắn ... lần sau :))., success");
+							res.redirect('/home');
+						}
+					})
+				}
+				else if(u == (user.matches.length -1) && flag > 0) {
+					res.redirect('/home');
+				}
 			}
 		}
 		else {

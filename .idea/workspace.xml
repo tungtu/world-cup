@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="83b60e4b-6236-4037-8f36-272bb17af387" name="Default" comment="" />
+    <list default="true" id="83b60e4b-6236-4037-8f36-272bb17af387" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/web/match.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/web/match.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,8 +20,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/web/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="73" column="97" selection-start-line="73" selection-start-column="97" selection-end-line="73" selection-end-column="97" />
+            <state relative-caret-position="247">
+              <caret line="59" column="60" lean-forward="true" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -35,8 +38,8 @@
       <file leaf-file-name="match.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/web/match.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+            <state relative-caret-position="319">
+              <caret line="68" column="13" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -126,8 +129,8 @@
         <option value="$PROJECT_DIR$/views/web/history.jade" />
         <option value="$PROJECT_DIR$/json_data.json" />
         <option value="$PROJECT_DIR$/controllers/web/index.js" />
-        <option value="$PROJECT_DIR$/controllers/web/match.js" />
         <option value="$PROJECT_DIR$/views/web/home.jade" />
+        <option value="$PROJECT_DIR$/controllers/web/match.js" />
       </list>
     </option>
   </component>
@@ -249,12 +252,12 @@
       <workItem from="1529253268197" duration="73000" />
       <workItem from="1529253425131" duration="7682000" />
       <workItem from="1529850582791" duration="396000" />
-      <workItem from="1530240465181" duration="7325000" />
+      <workItem from="1530240465181" duration="8911000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97461000" />
+    <option name="totallyTimeSpent" value="99047000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="721" extended-state="0" />
@@ -266,7 +269,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26602563" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26602563" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24959612" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.26442307" />
@@ -290,7 +293,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -535,13 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/web/layout.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
@@ -593,15 +589,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/web/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="73" column="97" selection-start-line="73" selection-start-column="97" selection-end-line="73" selection-end-column="97" />
+        <state relative-caret-position="247">
+          <caret line="59" column="60" lean-forward="true" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/web/match.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="49" column="17" lean-forward="true" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        <state relative-caret-position="319">
+          <caret line="68" column="13" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
         </state>
       </provider>
     </entry>
