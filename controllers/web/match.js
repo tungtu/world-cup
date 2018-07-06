@@ -95,7 +95,7 @@ router.get('/refresh', function (req, res) {
 						score = parseInt(type_score[data[k].name]);
 
 						for (let j in data[k].matches) {
-							if (data[k].matches[j].finished == true) {
+							if (data[k].matches[j].finished == true && data[k].matches[j].winner != null) {
 								users.forEach(function (user) {
 									let t;
 									if (!user.status.includes(data[k].matches[j].name.toString())) {
