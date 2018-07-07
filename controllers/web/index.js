@@ -71,7 +71,7 @@ router.get('/home', isLoggedInAdmin, function (req, res) {
 								for (var k in data) {
 									for (var j in data[k].matches) {
 										if (data[k].matches[j].finished == false &&
-											new Date(data[k].matches[j].date).toLocaleDateString() <= date_next_2.toLocaleDateString()
+											new Date(data[k].matches[j].date).getTime() <= date_next_2.getTime()
 										) {
 											matches.push(data[k].matches[j]);
 										}
